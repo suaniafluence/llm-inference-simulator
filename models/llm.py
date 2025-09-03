@@ -25,7 +25,9 @@ class LLMManager:
             "Mistral-7B": LLMModel("Mistral-7B", 7, 16, 8192, 14),
             "Mixtral-8x7B": LLMModel("Mixtral-8x7B", 47, 16, 32768, 94),
             "GPT-3.5": LLMModel("GPT-3.5", 175, 16, 4096, 350),
-            "Falcon-40B": LLMModel("Falcon-40B", 40, 16, 2048, 80)
+            "Falcon-40B": LLMModel("Falcon-40B", 40, 16, 2048, 80),
+            "GPT-OSS-20B": LLMModel("GPT-OSS-20B", 20, 16, 4096, 40),
+            "GPT-OSS-120B": LLMModel("GPT-OSS-120B", 120, 16, 4096, 240)
         }
     
     def get_model_names(self) -> List[str]:
