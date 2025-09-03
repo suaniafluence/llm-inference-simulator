@@ -89,4 +89,40 @@ async function addSlot() {
 
 async function runInference() {
     const modelName = document.getElementById('model-select').value;
-   
+    const count = parseInt(document.getElementById('inference-count').value);
+    
+    if (!modelName) {
+        alert('Veuillez sélectionner un modèle');
+        return;
+    }
+    
+    const response = await fetch('/api/test_inference', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({model_name: modelName, inference_count: count})
+    });
+    
+    const data = await response.json();
+    displayResults(data.results);
+}
+
+function displayResults(results) {
+    const container = document.getElementById('results');
+    container.innerHTML = '<h3>Résultats:</h3>';
+    
+    results.forEach((result, index) => {
+        const div = document.createElement('div');
+        div.className = `result ${result.success ? 'success' : 'error'}`;
+        
+        div.innerHTML = `
+            <strong>Test ${index + 1}:</strong> 
+            ${result.message}<br>
+            ${result.success ? `Temps estimé: ${result.estimated_time.toFixed(2)}s` : ''}
+        `;
+        
+        container.appendChild(div);
+    });
+}
+
+// Initialisation
+loadConfig();
