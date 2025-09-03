@@ -22,6 +22,7 @@ class LLMManager:
             "Llama-2-7B": LLMModel("Llama-2-7B", 7, 16, 4096, 14),
             "Llama-2-13B": LLMModel("Llama-2-13B", 13, 16, 4096, 26),
             "Llama-2-70B": LLMModel("Llama-2-70B", 70, 16, 4096, 140),
+            "Llama-4-70B": LLMModel("Llama-4-70B", 70, 16, 8192, 140),
             "Mistral-7B": LLMModel("Mistral-7B", 7, 16, 8192, 14),
             "Mixtral-8x7B": LLMModel("Mixtral-8x7B", 47, 16, 32768, 94),
             "GPT-3.5": LLMModel("GPT-3.5", 175, 16, 4096, 350),
