@@ -1,0 +1,114 @@
+:root {
+    --green: #00ff88;
+    --red: #ff4757;
+    --bg: #0a0a0a;
+    --card: #1a1a1a;
+    --text: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, var(--green), #00aaff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section {
+    background: var(--card);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid #333;
+}
+
+.slot {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: #222;
+    border-radius: 5px;
+}
+
+.slot-info {
+    flex: 1;
+}
+
+.gpu-info {
+    flex: 2;
+    padding: 1rem;
+    background: #111;
+    border-radius: 5px;
+}
+
+.gpu-selected {
+    border: 2px solid var(--green);
+}
+
+.gpu-empty {
+    border: 2px dashed #555;
+}
+
+.result {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    border-left: 4px solid;
+}
+
+.result.success {
+    background: rgba(0, 255, 136, 0.1);
+    border-left-color: var(--green);
+}
+
+.result.error {
+    background: rgba(255, 71, 87, 0.1);
+    border-left-color: var(--red);
+}
+
+button {
+    background: var(--green);
+    color: var(--bg);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+}
+
+select, input {
+    background: #222;
+    border: 1px solid #555;
+    color: var(--text);
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
